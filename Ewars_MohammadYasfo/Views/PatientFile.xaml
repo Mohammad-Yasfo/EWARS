@@ -1,0 +1,161 @@
+﻿<Window x:Class="Ewars.Views.PatientFile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ewars.Views"
+        mc:Ignorable="d"
+        Title="PatientFile" Height="700" Width="950" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Background="{StaticResource LightBackground}">
+    <Window.Resources>
+        <BorderGapMaskConverter x:Key="BorderGapMaskConverter"/>
+        <Style x:Key="GroupBoxStyle" TargetType="{x:Type GroupBox}">
+            <Setter Property="BorderBrush" Value="#D5DFE5"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF171717" Offset="0"/>
+                        <GradientStop Color="#FFA6002D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GroupBox}">
+                        <Grid SnapsToDevicePixels="true">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="6"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="6"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="6"/>
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="Transparent" BorderThickness="0" Background="{TemplateBinding Background}" Grid.ColumnSpan="4" Grid.Column="0" CornerRadius="4" Grid.Row="1" Grid.RowSpan="3"/>
+                            <Border BorderBrush="White" BorderThickness="0" Grid.ColumnSpan="4" CornerRadius="4" Grid.Row="1" Grid.RowSpan="3">
+                                <Border.OpacityMask>
+                                    <MultiBinding ConverterParameter="7" Converter="{StaticResource BorderGapMaskConverter}">
+                                        <Binding ElementName="Header" Path="ActualWidth"/>
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource Self}"/>
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource Self}"/>
+                                    </MultiBinding>
+                                </Border.OpacityMask>
+                                <Border BorderBrush="#FF0097FF" BorderThickness="3" CornerRadius="3">
+                                    <Border BorderBrush="#FF959595" BorderThickness="3" CornerRadius="2" Margin="1"/>
+                                </Border>
+                            </Border>
+                            <Border x:Name="Header" Grid.Column="1" Padding="3,1,3,0" Grid.Row="0" Grid.RowSpan="2">
+                                <ContentPresenter ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </Border>
+                            <ContentPresenter Grid.ColumnSpan="2" Grid.Column="1" Margin="{TemplateBinding Padding}" Grid.Row="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF0046FF" Offset="0"/>
+                <GradientStop Color="#FF00B1FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="692"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Patient File" Height="682" Width="942" HorizontalAlignment="Left" Name="GroupBox1" VerticalAlignment="Top" IsEnabled="True" Margin="0,10,0,0" Style="{StaticResource SmartGroupBox}" Background="#FF7EB4EA">
+            <Grid Margin="10,30,15,0" Height="210" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="167"></ColumnDefinition>
+                    <ColumnDefinition Width="256"></ColumnDefinition>
+                    <ColumnDefinition Width="167"></ColumnDefinition>
+                    <ColumnDefinition Width="256"></ColumnDefinition>
+                    <ColumnDefinition Width="167"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="textBlock1" Grid.Column="0" Grid.Row="0" Text="PatientFile ID" Style="{StaticResource TxtBStyle}"/>
+                <TextBlock x:Name="textBlock2" Style="{DynamicResource TxtBStyle}" Grid.Column="0" Grid.Row="1" Text="National ID" />
+                <TextBlock x:Name="textBlock4" Style="{DynamicResource TxtBStyle}" Grid.Column="0" Grid.Row="3" Text="Disease"/>
+                <TextBlock x:Name="textBlock7" Style="{DynamicResource TxtBStyle}" Grid.Column="2" Grid.Row="0" Text="Laboratory"/>
+                <TextBlock x:Name="textBlock8" Style="{DynamicResource TxtBStyle}" Grid.Column="2" Grid.Row="1" Text="Doctor"/>
+                <TextBlock x:Name="textBlock9" Style="{DynamicResource TxtBStyle}" Grid.Column="2" Grid.Row="2" Text="Informer"/>
+                <TextBlock x:Name="textBlock11" Style="{DynamicResource TxtBStyle}" Grid.Column="0" Grid.Row="2" Text="Health  Sector" FontSize="18"/>
+
+                <TextBox x:Name="textBox1" Style="{DynamicResource SSS}" Grid.Column="1" Grid.Row="0"  />
+                <TextBox x:Name="textBox2" Style="{DynamicResource SSS}" Grid.Column="1" Grid.Row="1"  />
+
+                <ComboBox Height="30" x:Name="ComboBox1" Width="200" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" Margin="0,10.61,30,0"/>
+                <ComboBox Height="30" x:Name="ComboBox2" Width="200" HorizontalAlignment="Right" Grid.Column="3" Grid.Row="0" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" Margin="0,10.61,30,0"/>
+                <ComboBox Height="30" x:Name="ComboBox3" Width="200" HorizontalAlignment="Right" Grid.Column="3" Grid.Row="1" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" Margin="0,10.61,30,0"/>
+                <ComboBox Height="30" x:Name="ComboBox5" Width="200" HorizontalAlignment="Right" Grid.Column="3" Grid.Row="2" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" Margin="0,10.61,30,0"/>
+                <ComboBox Height="30" x:Name="ComboBox6" Width="200" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" Margin="0,10.61,30,0" d:LayoutOverrides="Width"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Additional information about the patient" Height="342" Width="942" HorizontalAlignment="Left" x:Name="GroupBox1_Copy" VerticalAlignment="Top" IsEnabled="True" Margin="0,340,0,0" Style="{StaticResource SmartGroupBox}">
+            <Grid Margin="10,30,15,0" Height="210" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="167"/>
+                    <ColumnDefinition Width="256"/>
+                    <ColumnDefinition Width="167"/>
+                    <ColumnDefinition Width="256"/>
+                    <ColumnDefinition Width="167"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="textBlock5" Grid.Column="0" Grid.Row="0" Text="Reason" Style="{StaticResource TxtBStyle}"/>
+                <TextBlock x:Name="textBlock10" Style="{DynamicResource TxtBStyle}" Grid.Column="0" Grid.Row="2" Text="Reciving Report Date" FontSize="18"/>
+                <TextBlock x:Name="textBlock12" Style="{DynamicResource TxtBStyle}" Grid.Column="0" Grid.Row="3" Text="Rivision Date"/>
+                <TextBlock x:Name="textBlock13" Style="{DynamicResource TxtBStyle}" Grid.Column="2" Grid.Row="0" Text="Notes"/>
+                <TextBlock x:Name="textBlock14" Style="{DynamicResource TxtBStyle}" Grid.Column="2" Grid.Row="2" Text="Illness Symptoms Date" FontSize="16"/>
+                <TextBlock x:Name="textBlock15" Style="{DynamicResource TxtBStyle}" Grid.Column="2" Grid.Row="3" Text="Current State"/>
+                <TextBlock x:Name="textBlock16" Style="{DynamicResource TxtBStyle}" Grid.Column="2" Grid.Row="4" Text="Mobile Number"/>
+                <DatePicker Margin="394,0,434.36,-227.61" VerticalAlignment="Bottom" d:LayoutOverrides="Width"  Grid.Column="1" Grid.Row="2" />
+                <RadioButton x:Name="radioButton3" Grid.Column="3" Grid.Row="3" RenderTransformOrigin="0.633,-0.029" Margin="52.167,9,0,9" BorderThickness="10" BorderBrush="#FF4978F5" Foreground="#FF1CD61C" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                <RadioButton x:Name="radioButton4" Grid.Column="3" Grid.Row="3" Margin="0,10.61,51.416,7.39" BorderThickness="10" FontStyle="Oblique" BorderBrush="#FF4978F5" RenderTransformOrigin="-0.655,0.529" d:LayoutOverrides="Height" HorizontalAlignment="Right" Width="31.334"  />
+            </Grid>
+        </GroupBox>
+
+        <Label x:Name="label" Content="Dead" HorizontalAlignment="Right" Height="38" Margin="0,0,278.5,98.5" VerticalAlignment="Bottom" Width="63" Foreground="Red" FontSize="16"/>
+        <Label x:Name="label1" Content="Alive" HorizontalAlignment="Right" Height="38" Margin="0,0,161.5,98.5" VerticalAlignment="Bottom" Width="63" FontSize="16" Foreground="#FF06FF1C"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Right" Margin="0,0,59.5,209" TextWrapping="Wrap" Width="282" Height="80.707" VerticalAlignment="Bottom">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF97B1F3" Offset="0"/>
+                    <GradientStop Color="#FFC0D0FB" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="162.5,0,0,209" TextWrapping="Wrap" Width="282" Height="80.707" VerticalAlignment="Bottom">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF97B1F3" Offset="0"/>
+                    <GradientStop Color="#FFC0D0FB" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <DatePicker Margin="187,0,0,101.584" Height="34.916" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="240.177"/>
+        <DatePicker Margin="187,0,0,141.5" Height="34.916" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="240.177"/>
+        <DatePicker Margin="0,0,82.823,158.45" Height="34.916" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="240.177"/>
+    </Grid>
+</Window>
+

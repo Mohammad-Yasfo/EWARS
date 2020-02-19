@@ -1,0 +1,130 @@
+﻿<Window x:Class="Ewars.Views.Patient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ewars.Views" ResizeMode="NoResize"
+        mc:Ignorable="d" Height="700" Width="950" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{StaticResource LightBackground}">
+    <Window.Resources>
+        <BorderGapMaskConverter x:Key="BorderGapMaskConverter"/>
+        <Style x:Key="GroupBoxStyle" TargetType="{x:Type GroupBox}">
+            <Setter Property="BorderBrush" Value="#D5DFE5"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF171717" Offset="0"/>
+                        <GradientStop Color="#FFA6002D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GroupBox}">
+                        <Grid SnapsToDevicePixels="true">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="6"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="6"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="6"/>
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="Transparent" BorderThickness="0" Background="{TemplateBinding Background}" Grid.ColumnSpan="4" Grid.Column="0" CornerRadius="4" Grid.Row="1" Grid.RowSpan="3"/>
+                            <Border BorderBrush="White" BorderThickness="0" Grid.ColumnSpan="4" CornerRadius="4" Grid.Row="1" Grid.RowSpan="3">
+                                <Border.OpacityMask>
+                                    <MultiBinding ConverterParameter="7" Converter="{StaticResource BorderGapMaskConverter}">
+                                        <Binding ElementName="Header" Path="ActualWidth"/>
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource Self}"/>
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource Self}"/>
+                                    </MultiBinding>
+                                </Border.OpacityMask>
+                                <Border BorderBrush="#FF0097FF" BorderThickness="3" CornerRadius="3">
+                                    <Border BorderBrush="#FF959595" BorderThickness="3" CornerRadius="2" Margin="1"/>
+                                </Border>
+                            </Border>
+                            <Border x:Name="Header" Grid.Column="1" Padding="3,1,3,0" Grid.Row="0" Grid.RowSpan="2">
+                                <ContentPresenter ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </Border>
+                            <ContentPresenter Grid.ColumnSpan="2" Grid.Column="1" Margin="{TemplateBinding Padding}" Grid.Row="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF0046FF" Offset="0"/>
+                <GradientStop Color="#FF00B1FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="692"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Patient Informatiom Enty" Height="682" Width="942" HorizontalAlignment="Left" Name="GroupBox1" VerticalAlignment="Top" IsEnabled="True" Margin="0,10,0,0" Style="{StaticResource SmartGroupBox}">
+            <Grid Margin="10,30,15,0" Height="210" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="167"></ColumnDefinition>
+                    <ColumnDefinition Width="256"></ColumnDefinition>
+                    <ColumnDefinition Width="167"></ColumnDefinition>
+                    <ColumnDefinition Width="256"></ColumnDefinition>
+                    <ColumnDefinition Width="167"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="textBlock1" Grid.Column="0" Grid.Row="0" Text="National ID" Style="{StaticResource TxtBStyle}"/>
+                <TextBlock x:Name="textBlock2" Style="{DynamicResource TxtBStyle}" Grid.Column="0" Grid.Row="1" Text="First Name" />
+                <TextBlock x:Name="textBlock3" Style="{DynamicResource TxtBStyle}" Grid.Column="0" Grid.Row="2" Text="Last Name"/>
+                <TextBlock x:Name="textBlock4" Style="{DynamicResource TxtBStyle}" Grid.Column="0" Grid.Row="3" Text="Age"/>
+                <TextBlock x:Name="textBlock7" Style="{DynamicResource TxtBStyle}" Grid.Column="2" Grid.Row="0" Text="Phone Number"/>
+                <TextBlock x:Name="textBlock8" Style="{DynamicResource TxtBStyle}" Grid.Column="2" Grid.Row="1" Text="Married State"/>
+                <TextBlock x:Name="textBlock9" Style="{DynamicResource TxtBStyle}" Grid.Column="2" Grid.Row="2" Text="Gender"/>
+                <TextBlock x:Name="textBlock11" Style="{DynamicResource TxtBStyle}" Grid.Column="2" Grid.Row="4" Text="Mobile Number"/>
+
+                <TextBox x:Name="textBox1" Style="{DynamicResource SSS}" Grid.Column="1" Grid.Row="0"  />
+                <TextBox x:Name="textBox2" Style="{DynamicResource SSS}" Grid.Column="1" Grid.Row="1"  />
+                <TextBox x:Name="textBox3" Style="{DynamicResource SSS}" Grid.Column="1" Grid.Row="2"  />
+                <TextBox x:Name="textBox4" Style="{DynamicResource SSS}" Grid.Column="1" Grid.Row="3"  />
+                <TextBox x:Name="textBox5" Style="{DynamicResource SSS}" Grid.Column="3" Grid.Row="0"  />
+                <TextBox x:Name="textBox6" Style="{DynamicResource SSS}" Grid.Column="3" Grid.Row="1"  />
+                <RadioButton x:Name="radioButton1" Grid.Column="3" Grid.Row="2" RenderTransformOrigin="0.633,-0.029" Margin="52.167,9,0,9" BorderThickness="10" BorderBrush="#FF4978F5" Foreground="#FF1CD61C" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                <RadioButton x:Name="radioButton2" Grid.Column="3" Grid.Row="2" Margin="0,9,91.916,9" BorderThickness="10" FontStyle="Oblique" BorderBrush="#FF4978F5" RenderTransformOrigin="-0.655,0.529" d:LayoutOverrides="Height" HorizontalAlignment="Right" Width="31.334"  />
+            </Grid>
+        </GroupBox>
+        <DataGrid x:Name="grilla" AutoGenerateColumns="False" Margin="10,359,0,0" CanUserResizeColumns="True" ItemsSource="{Binding tabla1}" GridLinesVisibility="None" HeadersVisibility="Column" Height="323" VerticalAlignment="Top" HorizontalAlignment="Left" Width="922">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.026,-0.932" StartPoint="0.97,0.944">
+                    <GradientStop Color="#FF82C0F3" Offset="0"/>
+                    <GradientStop Color="#FF3C45FF" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="National ID" Binding="{Binding Columna1}" MinWidth="125"/>
+                <DataGridTextColumn Header="Patient Name" Binding="{Binding Columna2}" MinWidth="125"/>
+                <DataGridTextColumn Header="Age" Binding="{Binding Columna3}" MinWidth="125"/>
+                <DataGridTextColumn Header="Gender" Binding="{Binding Columna4}" MinWidth="125"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding Columna5}" MinWidth="125"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding Columna6}" MinWidth="125"/>
+                <DataGridTextColumn Header="Married State" Binding="{Binding Columna7}" MinWidth="125"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Add" Style="{StaticResource SmartBlackButton}" Foreground="White" Height="41" HorizontalAlignment="Left" Margin="72,294,0,0" x:Name="Button3" VerticalAlignment="Top" Width="140"/>
+        <Button Content="Delete" Style="{StaticResource SmartBlackButton}" Foreground="White" Height="41" Margin="252.5,294,0,0" x:Name="Button3_Copy" VerticalAlignment="Top" HorizontalAlignment="Left" Width="140"/>
+        <Button Content="Update" Style="{StaticResource SmartBlackButton}" Foreground="White" Height="41" Margin="439,294,363,0" x:Name="Button3_Copy1" VerticalAlignment="Top"/>
+        <Button Content="Cancel" Style="{StaticResource SmartBlackButton}" Foreground="White" Margin="0,294,25,0" x:Name="Button3_Copy2" HorizontalAlignment="Right" Width="140" RenderTransformOrigin="1.282,0.537" Click="Button3_Copy2_Click" Height="41" VerticalAlignment="Top"/>
+        <Button Content="Add Patient File" Style="{StaticResource SmartBlackButton}" Foreground="White" Height="41" Margin="0,294,192,0" x:Name="Button3_Copy3" VerticalAlignment="Top" HorizontalAlignment="Right" Width="140" Click="Button3_Copy3_Click"/>
+    </Grid>
+</Window>

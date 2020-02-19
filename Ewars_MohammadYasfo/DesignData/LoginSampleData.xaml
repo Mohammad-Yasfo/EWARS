@@ -1,0 +1,10 @@
+﻿<ViewModels:LoginViewModel xmlns:ViewModels="clr-namespace:Ewars.ViewModels"
+									xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+									xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+									UserName="MohammadYasfo" EMailAddress="mohammad.yasfo@gmail.com">
+
+	<!-- UserImageSource="http://dotnetmastermind.de/Images/DemoUser2.png" -->
+	<!-- UserImageSource="\Images\DemoUser2.png" -->
+
+</ViewModels:LoginViewModel>
+

@@ -1,0 +1,100 @@
+﻿<Window x:Class="Ewars.Views.Report"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ewars.Views"
+        mc:Ignorable="d" ResizeMode="NoResize"
+        Title="Report" Height="700" Width="950" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{StaticResource LightBackground}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="86*"/>
+            <RowDefinition Height="87*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Ewars;component/Images/Background.jpg"/>
+        </Grid.Background>
+        <Button x:Name="closebtn" Height="44.042" Margin="0,10,10,0" VerticalAlignment="Top"  Cursor="Hand" ToolTip="Close" RenderTransformOrigin="0.502,0.5" HorizontalAlignment="Right" Width="44.142" Background="White" Click="closebtn_Click" >
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Ewars;component/Images/close-02.png"/>
+            </Button.OpacityMask>
+        </Button>
+        <TextBlock x:Name="textBlock" Height="95.125" Margin="212.833,10.542,182.667,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe Print" Foreground="#FF173C89" FontWeight="Bold"><Run Text="Early Warning Alert and Response System "/><LineBreak/><Run Text="                  Weekly Report"/><Span><Run FlowDirection="RightToLeft" Text="                "/></Span></TextBlock>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="28.667" Margin="60,110.667,0,0" TextWrapping="Wrap" Text="The province :" VerticalAlignment="Top" Width="147.333" FontSize="18.667"/>
+        <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="60,144.334,0,170.999" TextWrapping="Wrap" Text="Health Region :" Width="147.333" FontSize="18.667"/>
+        <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Height="28.667" Margin="60,0,0,137.332" TextWrapping="Wrap" Text="Health Sector Name:" VerticalAlignment="Bottom" Width="147.333" FontSize="16"/>
+        <TextBlock x:Name="textBlock1_Copy2" Height="28.667" Margin="0,110.667,300.334,0" TextWrapping="Wrap" Text="Reporter Name:" VerticalAlignment="Top" FontSize="18.667" HorizontalAlignment="Right" Width="147.333"/>
+        <TextBlock x:Name="textBlock1_Copy3" Margin="0,144.334,300.334,170.999" TextWrapping="Wrap" FontSize="14.667" HorizontalAlignment="Right" Width="147.333"><Span><Run Text="Number "/><Run Text="of "/><Run Text="R"/><Run Text="eviewers "/><Run Text=":"/></Span></TextBlock>
+        <TextBlock x:Name="textBlock1_Copy4" Height="28.667" Margin="0,0,300.334,133.808" TextWrapping="Wrap" Text="Population:" VerticalAlignment="Bottom" FontSize="18.667" HorizontalAlignment="Right" Width="147.333"/>
+        <TextBlock x:Name="textBlock1_Copy5" HorizontalAlignment="Left" Height="28.667" Margin="60,0,0,108.665" TextWrapping="Wrap" Text="Reference :" VerticalAlignment="Bottom" Width="147.333" FontSize="18.667" RenderTransformOrigin="0.448,0.988"/>
+        <TextBlock x:Name="textBlock1_Copy6" Height="28.667" Margin="0,0,300.334,100.141" TextWrapping="Wrap" Text="Epidemic week :" VerticalAlignment="Bottom" FontSize="18.667" HorizontalAlignment="Right" Width="147.333"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="28.667" Margin="259.833,110.667,0,0" VerticalAlignment="Top" Width="190.167"/>
+        <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="259.833,144.334,0,170.999" Width="190.167"/>
+        <ComboBox x:Name="comboBox_Copy1" HorizontalAlignment="Left" Height="28.667" Margin="259.833,0,0,137.332" VerticalAlignment="Bottom" Width="190.167"/>
+        <ComboBox x:Name="comboBox_Copy2" HorizontalAlignment="Left" Height="28.667" Margin="259.833,0,0,103.665" VerticalAlignment="Bottom" Width="190.167"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Right" Height="28.667" Margin="0,110.667,67,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" RenderTransformOrigin="0.503,2.035">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF7997A8"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Right" Margin="0,144.334,67,170.999" TextWrapping="Wrap" Width="188" RenderTransformOrigin="0.503,2.035">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF7997A8"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Right" Height="28.667" Margin="0,0,67,137.332" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="188" RenderTransformOrigin="0.503,2.035">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF7997A8"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Right" Height="28.667" Margin="0,0,67,103.665" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="188" RenderTransformOrigin="0.503,2.035">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF7997A8"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Rectangle Margin="10,-80,10,86" Stroke="Black" Grid.Row="1">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF43A4C1" Offset="0"/>
+                    <GradientStop Color="#FF2B99B9" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <DataGrid x:Name="dataGrid" Margin="10,-80,10,86" Background="#99A2D6E6" Grid.Row="1"/>
+        <DataGridColumnHeader Content="Diseases" HorizontalAlignment="Left" Margin="10,0,0,50" VerticalAlignment="Bottom" Width="123.776"/>
+        <DataGridColumnHeader Content="Symbol" HorizontalAlignment="Left" Margin="138.776,0,0,50" VerticalAlignment="Bottom" Width="95.42"/>
+        <DataGridColumnHeader Content="Female Less 5" HorizontalAlignment="Left" Margin="239.196,0,0,50" VerticalAlignment="Bottom" Width="95.42"/>
+        <DataGridColumnHeader Content="Male less 5" Margin="339.616,0,0,50.554" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="95.42"/>
+        <DataGridColumnHeader Content="Female Bigger 5" Margin="440,0,404.823,50" VerticalAlignment="Bottom" d:LayoutOverrides="Width"/>
+        <DataGridColumnHeader Content="Male Bigger 5" Margin="0,0,302.646,50" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="97.177"/>
+        <DataGridColumnHeader Content="Total Cases" HorizontalAlignment="Right" Margin="0,0,200.469,50" Width="97.177" Height="30" VerticalAlignment="Bottom"/>
+        <DataGridColumnHeader Content="Female Deathes" HorizontalAlignment="Right" Height="30" Margin="0,0,107.292,49.447" VerticalAlignment="Bottom" Width="88.177" FontSize="10.667"/>
+        <DataGridColumnHeader Content="Male Deathes" HorizontalAlignment="Right" Margin="0,0,14.115,49.447" Width="88.177" FontSize="10.667" Height="30" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="textBlock1_Copy7" HorizontalAlignment="Left" Height="28.667" Margin="60,0,0,36.666" TextWrapping="Wrap" Text="Access date the report to The Health Region :" VerticalAlignment="Bottom" Width="375.036" FontSize="18.667" Grid.Row="1"/>
+        <TextBlock x:Name="textBlock1_Copy8" HorizontalAlignment="Left" Height="28.667" Margin="60,0,0,10" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="390" FontSize="16" Grid.Row="1"><Run Text="Access date the report to the Department of Health "/><Run FontSize="18.667" Text=":"/></TextBlock>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="89.5" Margin="117.833,5.667,0,0" VerticalAlignment="Top" Width="89.5" Source="/Ewars;component/Images/Logo2.png"/>
+        <Image x:Name="image_Copy" HorizontalAlignment="Right" Height="89.5" Margin="0,5.667,107.292,0" VerticalAlignment="Top" Width="89.5" Source="/Ewars;component/Images/Logo2.png"/>
+        <Button x:Name="Save" Content="Save" HorizontalAlignment="Right" Margin="0,0,14.115,22.134" Grid.Row="1" VerticalAlignment="Bottom" Width="122.792" Height="40">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF7997A8"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <DatePicker  Margin="455,313.356,208.823,0" Grid.Row="1"  Height="31.482" VerticalAlignment="Top" />
+        <DatePicker Margin="455,0,208.823,36.666" Grid.Row="1" Height="34.916" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>

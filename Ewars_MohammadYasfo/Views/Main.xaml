@@ -1,0 +1,74 @@
+﻿<Window x:Class="Ewars.Views.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ewars.Views"
+        mc:Ignorable="d" ResizeMode="NoResize"
+        Title="Main" Height="700" Width="750" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="{x:Null}">
+    <Grid>
+        <DockPanel>
+
+            <Grid Width="Auto">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Ewars;component/Images/9d.png"/>
+                </Grid.Background>
+
+                <Button x:Name="button" BorderBrush="{x:Null}" Foreground="{x:Null}" Content="Button" Margin="140.5,126.217,476.5,445.783" Width="Auto" Height="Auto" Click="button_Click" ToolTip="Chart">
+                    <Button.Background>
+                        <ImageBrush ImageSource="..\Images\8.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="button_Copy" BorderBrush="{x:Null}" Foreground="{x:Null}" Content="Button" Margin="307.834,60.834,309.165,511.166" Width="125" Height="Auto" d:LayoutOverrides="HorizontalAlignment, LeftMargin, RightMargin" ToolTip="Doctors">
+                    <Button.Background>
+                        <ImageBrush ImageSource="..\Images\1.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="button_Copy1" BorderBrush="{x:Null}" Foreground="{x:Null}" Content="Button" Margin="476.5,126.217,140.5,445.783" Width="Auto" Height="Auto" RenderTransformOrigin="0.262,0.526" ToolTip="Laboratory">
+                    <Button.Background>
+                        <ImageBrush ImageSource="..\Images\2.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="button_Copy2" BorderBrush="{x:Null}" Foreground="{x:Null}" Content="Button" Margin="71.252,282.55,545.748,289.45" Width="Auto" Height="120" d:LayoutOverrides="VerticalAlignment" ToolTip="Patients" Click="button_Copy2_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="..\Images\7.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="button_Copy3" BorderBrush="{x:Null}" Foreground="{x:Null}" Content="Button" Margin="545.683,282.55,71.317,289.45" Width="Auto" Height="120" d:LayoutOverrides="VerticalAlignment" Click="button_Copy3_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="..\Images\3.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="button_Copy4" BorderBrush="{x:Null}" Foreground="{x:Null}" Content="Button" Margin="476.5,438.717,140.5,133.283" Width="Auto" Height="Auto" RenderTransformOrigin="-1.604,-1.631" ToolTip="Care Car">
+                    <Button.Background>
+                        <ImageBrush ImageSource="..\Images\4.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="button_Copy5" BorderBrush="{x:Null}" Foreground="{x:Null}" Content="Button" Margin="307.834,503.1,309.165,68.9" Width="125" Height="Auto" RenderTransformOrigin="0.492,-0.839" d:LayoutOverrides="HorizontalAlignment, LeftMargin, RightMargin" ToolTip="Health Sector" Click="button_Copy5_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="..\Images\5.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="button_Copy6" BorderBrush="{x:Null}" Foreground="{x:Null}" Content="Button" Margin="140.5,438.717,476.5,133.283" Width="Auto" Height="Auto" RenderTransformOrigin="2.532,-1.04" ToolTip="Medicine">
+                    <Button.Background>
+                        <ImageBrush ImageSource="..\Images\6.png"/>
+                    </Button.Background>
+                </Button>
+                <Label x:Name="label" Content="Doctoers" Height="25" Margin="333.075,30.667,335.574,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="75"/>
+                <Label x:Name="label_Copy" Content="Laboratory" Height="25.167" Margin="0,174.633,51.817,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="83.683"/>
+                <Label x:Name="label_Copy1" Content="Chart" Height="25.167" Margin="84.15,174.633,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.789,2.336"/>
+                <Label x:Name="label_Copy2" Content="Patiet Files&#xD;&#xA;and Reports" Margin="0,297.9,0,0" HorizontalAlignment="Right" Height="44.167" VerticalAlignment="Top"/>
+                <Label x:Name="label_Copy3" Content="Patients" Margin="19.225,315.85,0,0" HorizontalAlignment="Left" Height="25.167" VerticalAlignment="Top"/>
+                <Label x:Name="label_Copy4" Content="Health Sector" Height="25.167" Margin="332.25,0,309.165,43.733" VerticalAlignment="Bottom" RenderTransformOrigin="0.637,0.473"/>
+                <Label x:Name="label_Copy5" Content="Care Car" Height="25.167" Margin="0,0,71.317,174.466" VerticalAlignment="Bottom" HorizontalAlignment="Right" RenderTransformOrigin="3.992,3.155" Width="64.183"/>
+                <Label x:Name="label_Copy6" Content="Medicine&#xD;&#xA;" Height="25.167" Margin="75.715,0,0,174.466" VerticalAlignment="Bottom" HorizontalAlignment="Left" RenderTransformOrigin="-3.205,-7.483" Width="64.785"/>
+                <Button x:Name="rightBtn_Copy" Height="44.042" Margin="0,10,10,0" VerticalAlignment="Top"  Cursor="Hand" ToolTip="Close" Click="Close_Click" RenderTransformOrigin="0.502,0.5" HorizontalAlignment="Right" Width="44.142" Background="White" >
+                    <Button.OpacityMask>
+                        <ImageBrush ImageSource="..\Images\close-02.png"/>
+                    </Button.OpacityMask>
+                </Button>
+            </Grid>
+        </DockPanel>
+
+    </Grid>
+</Window>
